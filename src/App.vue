@@ -32,7 +32,7 @@ body {
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
-  color: rgb(0, 0, 0); /* Mengubah warna tulisan menjadi putih */
+  color: rgb(0, 0, 0); 
 }
 
 .navbar {
@@ -49,8 +49,8 @@ body {
   margin-right: 10px;
   font-size: 1.1rem;
   transition: color 0.3s ease-in-out;
-  color: rgb(255, 255, 255); /* Mengubah warna tulisan menjadi putih */
-  font-weight: bold; /* Membuat tebal (bold) */
+  color: rgb(255, 255, 255); 
+  font-weight: bold; 
 }
 
 .navbar-nav .nav-link:hover {

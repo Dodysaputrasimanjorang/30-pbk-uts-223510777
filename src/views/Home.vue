@@ -23,25 +23,25 @@
   
   <style scoped>
   .container {
-    min-height: 100vh; /* Set tinggi sesuai tinggi layar */
+    min-height: 100vh; 
     display: flex;
-    align-items: center; /* Tengahkan vertikal */
-    justify-content: center; /* Tengahkan horizontal */
-    background-color: #000000; /* Warna latar belakang */
-    color: white; /* Warna teks */
+    align-items: center; 
+    justify-content: center; 
+    background-color: #000000; 
+    color: white; 
     text-align: center;
   }
   
   .content {
-    max-width: 800px; /* Lebar maksimum konten */
-    width: 100%; /* Konten melebar */
+    max-width: 800px; 
+    width: 100%; 
     padding: 20px;
   }
   
   .nav {
     padding-left: 0;
     list-style: none;
-    text-align: center; /* Posisikan teks menu ke kiri */
+    text-align: center; 
   }
   
   .nav-link {
