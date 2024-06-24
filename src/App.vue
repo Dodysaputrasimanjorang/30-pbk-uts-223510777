@@ -1,93 +1,68 @@
 <template>
-  <div class="container-yellow">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="sidebar p-3 rounded">
-          <h3 class="text-center">Selamat Datang di Website Saya</h3>
-          <ul class="nav flex-column">
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <router-link class="navbar-brand" to="/">My App</router-link>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" @click="activeTab = 'todoList'">Todo List</a>
+              <router-link class="nav-link" to="/todos">Todos</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click="activeTab = 'post'">Post</a>
+              <router-link class="nav-link" to="/posts">Posts</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/albums">Albums</router-link>
             </li>
           </ul>
         </div>
       </div>
-      <div class="col-md-9">
-        <Todos v-if="activeTab === 'todoList'" />
-        <Posts v-else-if="activeTab === 'post'" title="Posts">
-          <template v-slot:additional-info>
-            <p>Additional information goes here.</p>
-          </template>
-        </Posts>
-      </div>
+    </nav>
+    <div class="content">
+      <router-view />
     </div>
   </div>
 </template>
 
-<script>
-import Todos from './components/Todos.vue';
-import Posts from './components/Posts.vue';
-
-export default {
-  name: 'App',
-  components: {
-    Todos,
-    Posts
-  },
-  data() {
-    return {
-      activeTab: 'todoList'
-    };
-  }
-};
-</script>
-
 <style>
 body {
+  font-family: 'Arial', sans-serif;
   background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0); /* Mengubah warna tulisan menjadi putih */
 }
 
-.container-yellow {
-  margin-top: 50px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(104, 95, 156, 0.1);
+.navbar {
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.sidebar h3 {
-  color: #fff;
-}
-
-.nav-link {
-  color: #fff;
-  cursor: pointer;
-}
-
-.nav-link:hover {
-  color: #dee2e6;
-}
-
-.nav-link.active {
+.navbar-brand {
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.col-md-9 {
+.navbar-nav .nav-link {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
+  color: rgb(255, 255, 255); /* Mengubah warna tulisan menjadi putih */
+  font-weight: bold; /* Membuat tebal (bold) */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #adb5bd !important;
+}
+
+.content {
   padding: 20px;
 }
 
-@media (max-width: 768px) {
-  .col-md-9 {
-    margin-top: 20px;
-  }
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
 }
-
 </style>
